@@ -1,0 +1,32 @@
+{
+  "name": "simplifapi",
+  "version": "0.0.1",
+  "description": "Simplify your api!",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "request-json": "^0.6.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javibm/simplifapi.git"
+  },
+  "author": "Javier Agüera <javibm6@gmail.com> (https://twitter.com/AgueraJs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javibm/simplifapi/issues"
+  },
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "homepage": "https://github.com/javibm/simplifapi#readme"
+}
