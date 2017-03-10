@@ -21,19 +21,25 @@ simplifapi.Api = (function() {
     var resultArray = [];
     for(var i = 0; i < jsonArray.length; i++)
     {
+      if(jsonArray[i][field] === "") continue;
       this.managedget(api + jsonArray[i][field], function(result)
       {
-        if(apifield == "")
-        {
-          resultArray.push(result.body);
-        }
-        else
-        {
-          resultArray.push(result.body[apifield]);
-        }
-        if(manager.length == 0)
-        {
-          callback(resultArray);
+        if(result != undefined) {
+          if(result.body.appId != undefined)
+          {
+            if(apifield == "")
+            {
+              resultArray.push(result.body);
+            }
+            else
+            {
+              resultArray.push(result.body[apifield]);
+            }
+          }
+          if(manager.length == 0)
+          {
+            callback(resultArray);
+          }
         }
       });
     }
@@ -50,6 +56,9 @@ simplifapi.Api = (function() {
     this.get(url).then(function(result){
       manager.splice(manager.indexOf(timestamp),1);
       callback(result);
+    }).catch(function(err){
+      manager.splice(manager.indexOf(timestamp),1);
+      callback(undefined);
     });
   };
   return Api;
