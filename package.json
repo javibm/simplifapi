@@ -1,8 +1,8 @@
 {
   "name": "simplifapi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simplify your api!",
-  "main": "main.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
